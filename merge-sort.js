@@ -14,29 +14,30 @@ export function mergeSort(list){
     right = mergeSort(right);
     lvlCounter--;
 
-    let pointerL = 0;
-    let pointerR = 0;
+    let indexL = 0;
+    let indexR = 0;
     let mergedList = [];
 
-    while (pointerL < left.length || pointerR < right.length){ //while there's still values in some of the halves
-        if (pointerL >= left.length){ //if there's nothing else on left list, merge the resting values of right list
-            mergedList.push(right[pointerR++]);
+    while (indexL < left.length || indexR < right.length){ //while there's still values in some of the halves
+        if (indexL >= left.length){ //if there's nothing else on left list, merge the resting values of right list
+            mergedList.push(right[indexR++]);
             console.log(`[Lvl ${lvlCounter}] Pushed resting value. Result: ${mergedList}`); 
         }
-        else if (pointerR >= right.length){ //if there's nothing else on right list, merge the resting values of left list
-            mergedList.push(left[pointerL++]); 
+        else if (indexR >= right.length){ //if there's nothing else on right list, merge the resting values of left list
+            mergedList.push(left[indexL++]); 
             console.log(`[Lvl ${lvlCounter}] Pushed resting value. Result: ${mergedList}`);
         } 
         //if there's values in both halves, keep comparing and merging ascendingly
         else {
             mergedList.push(
-                left[pointerL] <= right[pointerR]
-                ? left[pointerL++]
-                : right[pointerR++]);
+                left[indexL] <= right[indexR]
+                ? left[indexL++]
+                : right[indexR++]);
             console.log(`[Lvl ${lvlCounter}] Pushed smaller value of comparison. Result: ${mergedList}`);
         }
     }
     
+    //populate the list with the result
     for (let i = 0; i < mergedList.length; i++) {
         list[i] = mergedList[i];
     }

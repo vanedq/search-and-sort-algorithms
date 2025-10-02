@@ -1,12 +1,14 @@
 export function bubbleSort(list){
     let swapped;
+    let unsortedLength = list.length; //skip comparing already sorted elements at the end of array
+    
     do{
         swapped = false;
         let leftElement = 0;
         let rightElement = 1;
         let key = 0;
 
-        while(leftElement < list.length){
+        while(rightElement < unsortedLength){
             key = list[leftElement];
             if (list[leftElement] > list[rightElement]){
                 list[leftElement] = list[rightElement];
@@ -17,6 +19,8 @@ export function bubbleSort(list){
             leftElement++;
             rightElement++;
         }
+        unsortedLength--;
     } while (swapped);
+    
     return list;
 }

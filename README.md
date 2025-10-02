@@ -106,17 +106,17 @@ Continues to check the array (from index 4)
 ## Merge Sort
 This sorting algorithm will recursively divide the array in half until there is only one element left, then it will compare the values to start merging them back in the right order.
 ```
-            [ 20 ] [ 15 ] | [ 10 ] [ 25 ]
+            [ 20 ] [ 15 ] | [ 10 ] [ 25 ]                        LVL 0
                   ↓               ↓                   (divide)
-      [ 20 ] | [ 15 ]            [ 10 ] | [ 25 ]
+      [ 20 ] | [ 15 ]            [ 10 ] | [ 25 ]                 LVL 1
       ↓             ↓            ↓             ↓      (divide)
- [ 20 ]           [ 15 ]     [ 10 ]           [ 25 ] 
+ [ 20 ]           [ 15 ]     [ 10 ]           [ 25 ]             LVL 2
  ---------------------------------------------------
- [ 20 ]     ↔     [ 15 ]     [ 10 ]     ↔     [ 25 ]  (compare)
+ [ 20 ]     ↔     [ 15 ]     [ 10 ]     ↔     [ 25 ]  (compare)  LVL 2
             ↓                           ↓             (merge)
-      [ 15 ]   [ 20 ]     ↔        [ 10 ]   [ 25 ]    (compare)
+      [ 15 ]   [ 20 ]     ↔        [ 10 ]   [ 25 ]    (compare)  LVL 1
                           ↓                           (merge)
-            [ 10 ] [ 15 ] [ 20 ] [ 25 ]
+            [ 10 ] [ 15 ] [ 20 ] [ 25 ]                          LVL 0
 ```
 ## Bubble Sort
 This sorting algorithm runs linearly, comparing adjacent elements and swapping them if necessary to order it. It will run from beginning to end until there's nothing to swap anymore.
